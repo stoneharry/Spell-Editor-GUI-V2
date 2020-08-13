@@ -74,6 +74,10 @@ namespace SpellEditor.Sources.DBC
             return null;
         }
 
+        public List<Dictionary<string, object>> GetAllRecords() => Body.RecordMaps.ToList();
+
+        public string LookupStringOffset(uint offset) => Reader.LookupStringOffset(offset);
+
         public Task ImportToSql(IDatabaseAdapter adapter, MainWindow.UpdateProgressFunc UpdateProgress, string IdKey, string bindingName)
         {
             return Task.Run(() =>

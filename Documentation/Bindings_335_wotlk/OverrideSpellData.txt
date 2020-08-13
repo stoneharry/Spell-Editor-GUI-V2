@@ -1,0 +1,12 @@
+uint id
+uint spellid1
+uint spellid2
+uint spellid3
+uint spellid4
+uint spellid5
+uint spellid6
+uint spellid7
+uint spellid8
+uint spellid9
+uint spellid10
+uint flags

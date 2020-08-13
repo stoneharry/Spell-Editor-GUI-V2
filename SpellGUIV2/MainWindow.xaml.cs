@@ -3557,6 +3557,54 @@ namespace SpellEditor
                 }
                 UpdateSpellVisualTab(id);
             }
+            else if (tab == TalentTab)
+            {
+                // FIXME(Harry)
+                if (!WoWVersionManager.IsWotlkOrGreaterSelected)
+                {
+                    return;
+                }
+                if (RacesList.Items.Count == 0)
+                {
+                    var raceDbc = DBCManager.GetInstance().FindDbcForBinding("ChrRaces", true);
+                    if (raceDbc != null)
+                    {
+                        var boxesList = new List<ThreadSafeCheckBox>();
+                        var records = raceDbc.GetAllRecords();
+                        for (int i = 0; i < records.Count; ++i)
+                        {
+                            var record = records.ElementAt(i);
+                            var name = raceDbc.LookupStringOffset(uint.Parse(record.ElementAt(13 + GetLocale()).Value.ToString()));
+                            var checkbox = new ThreadSafeCheckBox
+                            {
+                                Content = name
+                            };
+                            boxesList.Add(checkbox);
+                        }
+                        RacesList.ItemsSource = boxesList;
+                    }
+                }
+                if (ClassesList.Items.Count == 0)
+                {
+                    var classDbc = DBCManager.GetInstance().FindDbcForBinding("ChrClasses", true);
+                    if (classDbc != null)
+                    {
+                        var boxesList = new List<ThreadSafeCheckBox>();
+                        var records = classDbc.GetAllRecords();
+                        for (int i = 0; i < records.Count; ++i)
+                        {
+                            var record = records.ElementAt(i);
+                            var name = classDbc.LookupStringOffset(uint.Parse(record.ElementAt(3 + GetLocale()).Value.ToString()));
+                            var checkbox = new ThreadSafeCheckBox
+                            {
+                                Content = name
+                            };
+                            boxesList.Add(checkbox);
+                        }
+                        ClassesList.ItemsSource = boxesList;
+                    }
+                }
+            }
         }
 
         private async void SelectSpell_SelectionChanged(object sender, SelectionChangedEventArgs e)

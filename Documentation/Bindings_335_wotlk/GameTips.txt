@@ -1,0 +1,19 @@
+# GameTips 3.3.5 wotlk
+uint ID
+uint Name1 string
+uint Name2 string
+uint Name3 string
+uint Name4 string
+uint Name5 string
+uint Name6 string
+uint Name7 string
+uint Name8 string
+uint Name9 string
+uint Name10 string
+uint Name11 string
+uint Name12 string
+uint Name13 string
+uint Name14 string
+uint Name15 string
+uint Name16 string
+uint NameFlags

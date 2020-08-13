@@ -159,6 +159,8 @@
     <Compile Include="Sources\DBC\MutableGenericDbc.cs" />
     <Compile Include="Sources\DBC\SpellVisualKitModelAttach.cs" />
     <Compile Include="Sources\Tools\MPQ\MpqExport.cs" />
+    <Compile Include="Sources\Tools\TalentTools\Talent.cs" />
+    <Compile Include="Sources\Tools\TalentTools\TalentTab.cs" />
     <Compile Include="Sources\Tools\VisualTools\VisualController.cs" />
     <Compile Include="Sources\Tools\VisualTools\VisualMapBuilder.cs" />
     <Compile Include="Sources\VersionControl\WoWVersion.cs" />

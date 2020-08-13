@@ -1,0 +1,38 @@
+uint ID 					
+uint charges
+uint SpellDispelType1
+uint SpellDispelType2
+uint SpellDispelType3
+uint minAmount1
+uint minAmount2
+uint minAmount3
+uint maxAmount1
+uint maxAmount2
+uint maxAmount3
+uint objectId1
+uint objectId2
+uint objectId3
+uint sRefName0 string
+uint sRefName1 string
+uint sRefName2 string
+uint sRefName3 string
+uint sRefName4 string
+uint sRefName5 string
+uint sRefName6 string
+uint sRefName7 string
+uint sRefName8 string
+uint sRefName9 string
+uint sRefName10 string
+uint sRefName11 string
+uint sRefName12 string
+uint sRefName13 string
+uint sRefName14 string
+uint sRefName15 string
+uint sRefName16 string
+uint ItemVisuals
+uint Flags
+uint ItemCache
+uint SpellItemEnchantmentCondition
+uint SkillLine
+uint SkillLevel
+uint requiredLevel

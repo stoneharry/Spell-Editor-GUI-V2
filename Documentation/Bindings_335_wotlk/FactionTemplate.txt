@@ -1,0 +1,15 @@
+# FactionTemplate wotlk 3.3.5
+uint ID
+int Faction
+int Flags
+int FactionGroup
+int FriendGroup
+int EnemyGroup
+int Enemies1
+int Enemies2
+int Enemies3
+int Enemies4
+int Friends1
+int Friends2
+int Friends3
+int Friends4

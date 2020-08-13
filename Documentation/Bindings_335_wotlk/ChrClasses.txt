@@ -1,0 +1,61 @@
+# ChrClasses wotlk 3.3.5
+uint Id
+uint Field01
+uint DisplayPower
+uint PetNameToken
+uint Name1 string
+uint Name2 string
+uint Name3 string
+uint Name4 string
+uint Name5 string
+uint Name6 string
+uint Name7 string
+uint Name8 string
+uint Name9 string
+uint Name10 string
+uint Name11 string
+uint Name12 string
+uint Name13 string
+uint Name14 string
+uint Name15 string
+uint Name16 string
+uint NameFlags
+uint NameFemale1 string
+uint NameFemale2 string
+uint NameFemale3 string
+uint NameFemale4 string
+uint NameFemale5 string
+uint NameFemale6 string
+uint NameFemale7 string
+uint NameFemale8 string
+uint NameFemale9 string
+uint NameFemale10 string
+uint NameFemale11 string
+uint NameFemale12 string
+uint NameFemale13 string
+uint NameFemale14 string
+uint NameFemale15 string
+uint NameFemale16 string
+uint NameFemaleFlags
+uint NameMale1 string
+uint NameMale2 string
+uint NameMale3 string
+uint NameMale4 string
+uint NameMale5 string
+uint NameMale6 string
+uint NameMale7 string
+uint NameMale8 string
+uint NameMale9 string
+uint NameMale10 string
+uint NameMale11 string
+uint NameMale12 string
+uint NameMale13 string
+uint NameMale14 string
+uint NameMale15 string
+uint NameMale16 string
+uint NameMaleFlags
+uint FileName string
+uint SpellClassSet
+uint Flags
+uint CinematicSequenceId
+uint RequiredExpansion

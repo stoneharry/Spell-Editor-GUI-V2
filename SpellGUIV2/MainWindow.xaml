@@ -1042,6 +1042,33 @@
                     </TabItem>
                 </TabControl>
             </TabItem>
+            <!--"{DynamicResource TalentTab}"-->
+            <TabItem Name="TalentTab" Header="Talents" >
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="AUTO"/>
+                        <ColumnDefinition Width="AUTO"/>
+                        <ColumnDefinition Width="AUTO"/>
+                        <ColumnDefinition Width="AUTO"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="AUTO"/>
+                        <RowDefinition Height="AUTO"/>
+                        <RowDefinition Height="AUTO"/>
+                        <RowDefinition Height="AUTO"/>
+                    </Grid.RowDefinitions>
+                    <Label Content="Races" Grid.Row="0" Grid.Column="0"/>
+                    <ListBox Name="RacesList" Grid.Row="1" Grid.Column="0" Grid.RowSpan="3"/>
+                    <Label Content="Classes" Grid.Row="0" Grid.Column="1"/>
+                    <ListBox Name="ClassesList" Grid.Row="1" Grid.Column="1" Grid.RowSpan="3"/>
+                    <ListBox Name="TalentTabList" Grid.Row="0" Grid.Column="2" Grid.RowSpan="4">
+                        
+                    </ListBox>
+                    <Grid Name="TalentRenderGrid" Grid.Row="0" Grid.Column="3" Grid.RowSpan="4">
+                        
+                    </Grid>
+                </Grid>
+            </TabItem>
         </TabControl>
     </Grid>
     <controls:MetroWindow.RightWindowCommands>
