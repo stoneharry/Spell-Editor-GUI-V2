@@ -761,29 +761,32 @@ namespace SpellEditor
             }
             var controller = await this.ShowProgressAsync(SafeTryFindResource("PleaseWait"), SafeTryFindResource("PleaseWait_2"));
             controller.SetCancelable(false);
-            await Task.Delay(1000);
-            try
+            await Task.Run(() =>
             {
-                switch (Config.connectionType)
+                try
                 {
-                    case Config.ConnectionType.MySQL:
-                        adapter = new MySQL();
-                        break;
-                    case Config.ConnectionType.SQLite:
-                        adapter = new SQLite();
-                        break;
-                    default:
-                        throw new Exception("Unknown connection type, valid types: MySQL, SQLite");
+                    switch (Config.connectionType)
+                    {
+                        case Config.ConnectionType.MySQL:
+                            adapter = new MySQL();
+                            break;
+                        case Config.ConnectionType.SQLite:
+                            adapter = new SQLite();
+                            break;
+                        default:
+                            throw new Exception("Unknown connection type, valid types: MySQL, SQLite");
+                    }
+                    adapter.CreateAllTablesFromBindings();
                 }
-                adapter.CreateAllTablesFromBindings();
-            }
-            catch (Exception e)
-            {
-                await controller.CloseAsync();
-                await this.ShowMessageAsync(SafeTryFindResource("ERROR"),
-                    $"{SafeTryFindResource("Input_MySQL_Error")}\n{e.Message + "\n" + e.InnerException?.Message}");
-                return;
-            }
+                catch (Exception e)
+                {
+                    controller.CloseAsync();
+                    this.ShowMessageAsync(SafeTryFindResource("ERROR"),
+                       $"{SafeTryFindResource("Input_MySQL_Error")}\n{e.Message + "\n" + e.InnerException?.Message}");
+                    return;
+                }
+            });
+
             try
             {
                 loadAllRequiredDbcs();
@@ -809,7 +812,7 @@ namespace SpellEditor
                     $"{SafeTryFindResource("LoadDBCFromBinding_Error_1")}: {e.Message}\n\n{e}\n{e.InnerException}");
                 return;
             }
-
+            
             try
             {
                 spellTable.Columns.Add("id", typeof(uint));
@@ -3559,7 +3562,7 @@ namespace SpellEditor
             }
             else if (tab == TalentTab)
             {
-                // FIXME(Harry)
+                // FIXME(Harry) Needs to support multiple versions and should load from MySQL not DBC
                 if (!WoWVersionManager.IsWotlkOrGreaterSelected)
                 {
                     return;

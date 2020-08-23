@@ -165,7 +165,12 @@ namespace SpellEditor.Sources.DBC
                     throw new Exception("Binding not found: " + bindingName);
                 var body = new DBCBodyToSerialize();
 
-                var orderClause = binding.Fields.FirstOrDefault(f => f.Name.Equals(IdKey)) != null ? $" ORDER BY `{IdKey}`" : "";
+                var orderClause = "";
+                if (binding.OrderOutput)
+                {
+                    orderClause = binding.Fields.FirstOrDefault(f => f.Name.Equals(IdKey)) != null ? $" ORDER BY `{IdKey}`" : "";
+                }
+
                 body.Records = LoadRecords(adapter, bindingName, orderClause, updateProgress);
                 var numRows = body.Records.Count();
                 if (numRows == 0)

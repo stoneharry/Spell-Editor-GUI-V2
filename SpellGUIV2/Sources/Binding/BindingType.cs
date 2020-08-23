@@ -8,6 +8,7 @@
         FLOAT,
         DOUBLE,
         UNKNOWN,
-        STRING_OFFSET
+        STRING_OFFSET,
+        IGNORE_ORDER
     }
 }

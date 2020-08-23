@@ -12,11 +12,13 @@ namespace SpellEditor.Sources.Binding
 
         public readonly BindingEntry[] Fields;
         public readonly string Name;
+        public readonly bool OrderOutput;
 
-        public Binding(string fileName, List<BindingEntry> bindingEntryList)
+        public Binding(string fileName, List<BindingEntry> bindingEntryList, bool orderOutput)
         {
             Name = Path.GetFileNameWithoutExtension(fileName);
             Fields = bindingEntryList.ToArray();
+            OrderOutput = orderOutput;
         }
 
         /**
